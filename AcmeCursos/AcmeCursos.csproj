@@ -171,6 +171,7 @@
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\EstudanteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InscricaoController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DAL\AppDBContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -184,8 +185,13 @@
     <Compile Include="Migrations\201508250238527_Cursos.Designer.cs">
       <DependentUpon>201508250238527_Cursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508251642555_Inscricoes.cs" />
+    <Compile Include="Migrations\201508251642555_Inscricoes.Designer.cs">
+      <DependentUpon>201508251642555_Inscricoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Inscricao.cs" />
     <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Estudante.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -260,6 +266,7 @@
     <Content Include="Views\Curso\Details.cshtml" />
     <Content Include="Views\Curso\Edit.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
+    <Content Include="Views\Inscricao\CadastrarEstudante.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -278,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201508250238527_Cursos.resx">
       <DependentUpon>201508250238527_Cursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508251642555_Inscricoes.resx">
+      <DependentUpon>201508251642555_Inscricoes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
