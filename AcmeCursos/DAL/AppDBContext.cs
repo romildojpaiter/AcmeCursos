@@ -9,6 +9,7 @@ namespace AcmeCursos.DAL
 {
     public class AppDBContext : DbContext
     {
+
         public AppDBContext() : base("DefaultConnection")
         {
 
