@@ -88,7 +88,7 @@ namespace AcmeCursos.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Estudante estudante = db.Estudantes.Find(id);
+            Estudante estudante = db.Estudantes.Include("Inscricoes").SingleOrDefault(x => x.Id == id);
 
             if(estudante == null)
             {

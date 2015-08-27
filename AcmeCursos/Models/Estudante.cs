@@ -24,5 +24,9 @@ namespace AcmeCursos.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataMatricula { get; set; }
+
+        [UIHint("_Inscricoes")]
+        public virtual ICollection<Inscricao> Inscricoes { get; set; }
+        
     }
 }

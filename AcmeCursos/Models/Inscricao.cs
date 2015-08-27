@@ -21,8 +21,8 @@ namespace AcmeCursos.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime DataInscricao { get; set;  }
 
-        public virtual Curso curso { get; set;  }
-        public virtual Estudante estudante { get; set; }
+        public virtual Curso Curso { get; set; }
+        public virtual Estudante Estudante { get; set; }
 
     }
 }

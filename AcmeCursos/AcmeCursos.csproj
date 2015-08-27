@@ -267,6 +267,8 @@
     <Content Include="Views\Curso\Edit.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
     <Content Include="Views\Inscricao\CadastrarEstudante.cshtml" />
+    <Content Include="Views\Shared\Success.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\_Inscricoes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

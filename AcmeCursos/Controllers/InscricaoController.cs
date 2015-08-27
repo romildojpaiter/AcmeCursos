@@ -45,11 +45,12 @@ namespace AcmeCursos.Controllers
             if (ModelState.IsValid)
             {
                 inscricao.DataInscricao = DateTime.Now;
-
                 db.Inscricoes.Add(inscricao);
-
                 db.SaveChanges();
-                
+
+                ViewBag.Mensagem = "Sua inscrição foi realizada com Sucesso";
+
+                return View("Success");
             }
 
             return View(inscricao);
