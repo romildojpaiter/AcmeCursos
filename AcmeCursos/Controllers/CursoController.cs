@@ -24,6 +24,10 @@ namespace AcmeCursos.Controllers
         // GET: Curso/Details/5
         public ActionResult Details(int? id)
         {
+
+            var a = new WCFAcme.Service1();
+
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
