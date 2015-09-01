@@ -1,5 +1,4 @@
-﻿using AcmeCursos.DAL;
-using AcmeCursos.Models;
+﻿using AcmeCursos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +10,15 @@ namespace AcmeCursos.Controllers
     public class InscricaoController : Controller
     {
 
-        AppDBContext db = new AppDBContext();
+        // AppDBContext db = new AppDBContext();
 
         // GET: Inscricao
         public ActionResult CadastrarEstudante()
         {
 
-            var estudantes = db.Estudantes.ToList();
-            var cursos = db.Cursos.ToList();
-
+            // var estudantes = db.Estudantes.ToList();
+            // var cursos = db.Cursos.ToList();
+            /*
             List<SelectListItem> selectEstudantes = estudantes.Select(e => new SelectListItem()
             {
                 Text = string.Format("{0} {1}", e.Nome, e.Sobrenome),
@@ -34,7 +33,7 @@ namespace AcmeCursos.Controllers
 
             ViewBag.CursoId = selectCursos;
             ViewBag.EstudanteId = selectEstudantes;
-
+            */
             return View();
         }
 
@@ -45,9 +44,10 @@ namespace AcmeCursos.Controllers
             if (ModelState.IsValid)
             {
                 inscricao.DataInscricao = DateTime.Now;
+                /*
                 db.Inscricoes.Add(inscricao);
                 db.SaveChanges();
-
+                */
                 ViewBag.Mensagem = "Sua inscrição foi realizada com Sucesso";
 
                 return View("Success");

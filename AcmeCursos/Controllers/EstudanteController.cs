@@ -1,5 +1,4 @@
-﻿using AcmeCursos.DAL;
-using AcmeCursos.Models;
+﻿using AcmeCursos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +11,11 @@ namespace AcmeCursos.Controllers
     public class EstudanteController : Controller
     {
 
-        private AppDBContext db = new AppDBContext();
-
         // GET: Estudante
         public ActionResult Index()
         {
 
-            var estudantes = db.Estudantes.ToList();
-
-            return View(estudantes);
+            return View();
         }
 
         public ActionResult Create()
@@ -36,8 +31,8 @@ namespace AcmeCursos.Controllers
 
             if (ModelState.IsValid)
             {
-                db.Estudantes.Add(estudante);
-                db.SaveChanges();
+                // db.Estudantes.Add(estudante);
+                // db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -54,7 +49,7 @@ namespace AcmeCursos.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Estudante estudante = db.Estudantes.Find(id);
+            Estudante estudante = null; // db.Estudantes.Find(id);
 
             if ( estudante == null)
             {
@@ -70,9 +65,8 @@ namespace AcmeCursos.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(estudante).State = System.Data.Entity.EntityState.Modified;
-
-                db.SaveChanges();
+                // db.Entry(estudante).State = System.Data.Entity.EntityState.Modified;
+                // db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -88,7 +82,7 @@ namespace AcmeCursos.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Estudante estudante = db.Estudantes.Include("Inscricoes").SingleOrDefault(x => x.Id == id);
+            Estudante estudante = null; // db.Estudantes.Include("Inscricoes").SingleOrDefault(x => x.Id == id);
 
             if(estudante == null)
             {
@@ -107,7 +101,7 @@ namespace AcmeCursos.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Estudante estudante = db.Estudantes.Find(id);
+            Estudante estudante = null; //db.Estudantes.Find(id);
 
             if (estudante == null)
             {
@@ -121,11 +115,10 @@ namespace AcmeCursos.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-            Estudante estudante = db.Estudantes.Find(id);
+            Estudante estudante = null; //  db.Estudantes.Find(id);
 
-            db.Estudantes.Remove(estudante);
-
-            db.SaveChanges();
+            //db.Estudantes.Remove(estudante);
+            //db.SaveChanges();
 
             return RedirectToAction("Index");
         }
@@ -137,7 +130,7 @@ namespace AcmeCursos.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }

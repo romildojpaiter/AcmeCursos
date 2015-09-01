@@ -6,33 +6,34 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using AcmeCursos.DAL;
 using AcmeCursos.Models;
 
 namespace AcmeCursos.Controllers
 {
     public class CursoController : Controller
     {
-        private AppDBContext db = new AppDBContext();
+        // private AppDBContext db = new AppDBContext();
 
         // GET: Curso
         public ActionResult Index()
         {
-            return View(db.Cursos.ToList());
+            //return View(db.Cursos.ToList());
+
+            return null;
         }
 
         // GET: Curso/Details/5
         public ActionResult Details(int? id)
         {
 
-            var a = new WCFAcme.Service1();
+            // var a = new WCFAcme.Service1();
 
 
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Curso curso = db.Cursos.Find(id);
+            Curso curso = null; // db.Cursos.Find(id);
             if (curso == null)
             {
                 return HttpNotFound();
@@ -55,8 +56,8 @@ namespace AcmeCursos.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Cursos.Add(curso);
-                db.SaveChanges();
+                // db.Cursos.Add(curso);
+                // db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -70,7 +71,7 @@ namespace AcmeCursos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Curso curso = db.Cursos.Find(id);
+            Curso curso = null; // db.Cursos.Find(id);
             if (curso == null)
             {
                 return HttpNotFound();
@@ -87,8 +88,8 @@ namespace AcmeCursos.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(curso).State = EntityState.Modified;
-                db.SaveChanges();
+                // db.Entry(curso).State = EntityState.Modified;
+                // db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(curso);
@@ -101,7 +102,7 @@ namespace AcmeCursos.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Curso curso = db.Cursos.Find(id);
+            Curso curso = null; // db.Cursos.Find(id);
             if (curso == null)
             {
                 return HttpNotFound();
@@ -114,9 +115,9 @@ namespace AcmeCursos.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Curso curso = db.Cursos.Find(id);
-            db.Cursos.Remove(curso);
-            db.SaveChanges();
+            Curso curso = null; // db.Cursos.Find(id);
+            // db.Cursos.Remove(curso);
+            // db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -124,7 +125,7 @@ namespace AcmeCursos.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }

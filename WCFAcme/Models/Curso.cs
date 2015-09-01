@@ -7,9 +7,10 @@ using System.Web;
 
 namespace AcmeCursos.Models
 {
-    [Table("Curso")]
+    [Table("curso")]
     public class Curso
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
